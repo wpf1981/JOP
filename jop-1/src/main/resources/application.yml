@@ -55,17 +55,18 @@ spring:
         login-username: admin
         # 登录密码
         login-password: 12345
-#jpa配置
-  jpa:
-#    hibernate:
-#      ddl-auto: update
-   show-sql: true
 #模板配置
   thymeleaf:
     cache: false
     prefix: classpath:/templates/
     suffix: .html
     #    cache: false #关闭缓存实际环境中true
+
+#jpa配置
+  jpa:
+    show-sql: true
+#    hibernate:
+#      ddl-auto: update
 
 #配置服务器端口
 server:
