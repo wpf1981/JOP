@@ -13,10 +13,10 @@
         #an { display: none; }
     </style>
 </head>
-<body class="text-center">
+<body>
 <div class="container">
-    <form class="form-signin" action="login.html" th:action="@{/login}" method="post">
-        <h2 class="form-signin-heading">请登录</h2>
+    <form class="form-signin text-center" action="login.html" th:action="@{/login}" method="post">
+        <h2 class="form-signin-heading" style="">请登录</h2>
         <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
         <label class="sr-only">用户名</label>
         <input type="text" name="username" class="form-control" placeholder="用户名" required autofocus>
