@@ -1,1 +1,1 @@
-DigestUtils.md5DigestAsHex(md.getBytes())
+DigestUtils.md5DigestAsHex(String.getBytes())//将字符串类型进行md5加密
