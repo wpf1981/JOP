@@ -22,10 +22,8 @@ public class MyMvcConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
 //        super.addViewControllers(registry);
-        registry.addViewController("/").setViewName("login");
         registry.addViewController("/index.html").setViewName("login");
         registry.addViewController("/main.html").setViewName("index");
-
     }
 
     //注册拦截器，拦截那些，放行那些

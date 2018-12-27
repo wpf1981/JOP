@@ -1,15 +1,19 @@
 package com.wpf.jop1.controller;
 
+import com.wpf.jop1.entity.Ioerror;
 import com.wpf.jop1.entity.User;
+import com.wpf.jop1.repository.IoerrorRepository;
 import com.wpf.jop1.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -19,6 +23,12 @@ import java.util.Optional;
  */
 @Controller
 public class JopController {
+
+    @RequestMapping("/")
+    public String index(){
+        return "login";
+    }
+
     @Autowired
     UserRepository userRepository;
 //    @RequestMapping(value = "/login",method = RequestMethod.POST)
@@ -47,4 +57,16 @@ public class JopController {
         }
 
     }
+
+    @Autowired
+    IoerrorRepository ioerrorRepository;
+    @GetMapping(value = "/io")
+    @Cacheable(value = "io")
+    public String page1(Model model){
+        List<Ioerror> ioerrors= ioerrorRepository.findAll();
+        model.addAttribute("iolist",ioerrors);
+        return "ioerror";
+    }
+
+
 }

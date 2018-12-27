@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>主页</title>
-    <link rel="stylesheet" th:href="@{webjars/bootstrap/3.3.7/css/bootstrap.min.css}" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" th:href="@{webjars/bootstrap/3.3.7/js/bootstrap.min.js}"  href="webjars/bootstrap/3.3.7/js/bootstrap.min.js">
-    <link rel="stylesheet" th:href="@{webjars/jquery/3.3.1-1/jquery.min.js}"  href="webjars/jquery/3.3.1-1/jquery.min.js">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"  href="/webjars/bootstrap/3.3.7/js/bootstrap.min.js">
+    <link rel="stylesheet" th:href="@{/webjars/jquery/3.3.1-1/jquery.min.js}"  href="/webjars/jquery/3.3.1-1/jquery.min.js">
     <style type="text/css" media="print">
         #an { display: none; }
     </style>
@@ -16,316 +18,28 @@
     </style>
 </head>
 <body >
-
-<div class="container-fluid">
-    <div class="row-fluid">
-        <div class="span12">
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <div class="container-fluid">
-                        <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a> <a href="#" class="brand">网站名</a>
-                        <div class="nav-collapse collapse navbar-responsive-collapse">
-                            <ul class="nav">
-                                <li class="active">
-                                    <a href="#">主页</a>
-                                </li>
-                                <li>
-                                    <a href="#">链接</a>
-                                </li>
-                                <li>
-                                    <a href="#">链接</a>
-                                </li>
-                                <li class="dropdown">
-                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">下拉菜单<strong class="caret"></strong></a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a href="#">下拉导航1</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">下拉导航2</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">其他</a>
-                                        </li>
-                                        <li class="divider">
-                                        </li>
-                                        <li class="nav-header">
-                                            标签
-                                        </li>
-                                        <li>
-                                            <a href="#">链接1</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">链接2</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <ul class="nav pull-right">
-                                <li>
-                                    <a href="#">右边链接</a>
-                                </li>
-                                <li class="divider-vertical">
-                                </li>
-                                <li class="dropdown">
-                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">下拉菜单<strong class="caret"></strong></a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a href="#">下拉导航1</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">下拉导航2</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">其他</a>
-                                        </li>
-                                        <li class="divider">
-                                        </li>
-                                        <li>
-                                            <a href="#">链接3</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
+<nav class="navbar navbar-inverse navbar-fixed-top" th:fragment="copy">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">简易接口</a>
         </div>
-    </div>
-    <div class="row-fluid">
-        <div class="span2">
-            <ul class="nav nav-list">
-                <li class="nav-header">
-                    列表标题
-                </li>
-                <li class="active">
-                    <a href="#">首页</a>
-                </li>
-                <li>
-                    <a href="#">库</a>
-                </li>
-                <li>
-                    <a href="#">应用</a>
-                </li>
-                <li class="nav-header">
-                    功能列表
-                </li>
-                <li>
-                    <a href="#">资料</a>
-                </li>
-                <li>
-                    <a href="#">设置</a>
-                </li>
-                <li class="divider">
-                </li>
-                <li>
-                    <a href="#">帮助</a>
-                </li>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">首页</a></li>
+                <li><a href="/io">挂单查询</a></li>
+                <li><a href="#contact">销售退货原因汇总</a></li>
             </ul>
-        </div>
-        <div class="span6">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>
-                        编号
-                    </th>
-                    <th>
-                        产品
-                    </th>
-                    <th>
-                        交付时间
-                    </th>
-                    <th>
-                        状态
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
-                        1
-                    </td>
-                    <td>
-                        TB - Monthly
-                    </td>
-                    <td>
-                        01/04/2012
-                    </td>
-                    <td>
-                        Default
-                    </td>
-                </tr>
-                <tr class="success">
-                    <td>
-                        1
-                    </td>
-                    <td>
-                        TB - Monthly
-                    </td>
-                    <td>
-                        01/04/2012
-                    </td>
-                    <td>
-                        Approved
-                    </td>
-                </tr>
-                <tr class="error">
-                    <td>
-                        2
-                    </td>
-                    <td>
-                        TB - Monthly
-                    </td>
-                    <td>
-                        02/04/2012
-                    </td>
-                    <td>
-                        Declined
-                    </td>
-                </tr>
-                <tr class="warning">
-                    <td>
-                        3
-                    </td>
-                    <td>
-                        TB - Monthly
-                    </td>
-                    <td>
-                        03/04/2012
-                    </td>
-                    <td>
-                        Pending
-                    </td>
-                </tr>
-                <tr class="info">
-                    <td>
-                        4
-                    </td>
-                    <td>
-                        TB - Monthly
-                    </td>
-                    <td>
-                        04/04/2012
-                    </td>
-                    <td>
-                        Call in to confirm
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="span4">
-            <blockquote>
-                <p>
-                    github是一个全球化的开源社区.
-                </p> <small>关键词 <cite>开源</cite></small>
-            </blockquote>
-        </div>
+        </div><!--/.nav-collapse -->
     </div>
-    <div class="row-fluid">
-        <div class="span12">
-            <address> <strong>Twitter, Inc.</strong><br /> 795 Folsom Ave, Suite 600<br /> San Francisco, CA 94107<br /> <abbr title="Phone">P:</abbr> (123) 456-7890</address>
-        </div>
-    </div>
-    <div class="row-fluid">
-        <div class="span12">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>
-                        编号
-                    </th>
-                    <th>
-                        产品
-                    </th>
-                    <th>
-                        交付时间
-                    </th>
-                    <th>
-                        状态
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
-                        1
-                    </td>
-                    <td>
-                        TB - Monthly
-                    </td>
-                    <td>
-                        01/04/2012
-                    </td>
-                    <td>
-                        Default
-                    </td>
-                </tr>
-                <tr class="success">
-                    <td>
-                        1
-                    </td>
-                    <td>
-                        TB - Monthly
-                    </td>
-                    <td>
-                        01/04/2012
-                    </td>
-                    <td>
-                        Approved
-                    </td>
-                </tr>
-                <tr class="error">
-                    <td>
-                        2
-                    </td>
-                    <td>
-                        TB - Monthly
-                    </td>
-                    <td>
-                        02/04/2012
-                    </td>
-                    <td>
-                        Declined
-                    </td>
-                </tr>
-                <tr class="warning">
-                    <td>
-                        3
-                    </td>
-                    <td>
-                        TB - Monthly
-                    </td>
-                    <td>
-                        03/04/2012
-                    </td>
-                    <td>
-                        Pending
-                    </td>
-                </tr>
-                <tr class="info">
-                    <td>
-                        4
-                    </td>
-                    <td>
-                        TB - Monthly
-                    </td>
-                    <td>
-                        04/04/2012
-                    </td>
-                    <td>
-                        Call in to confirm
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
+</nav>
+
+<div class="container" style="padding-top: 80px">
+
+    <a href="/io" class="btn btn-lg btn-primary">挂单列表</a>
+    <button class="btn btn-lg btn-primary" >挂单列表</button>
+
+</div><!-- /.container -->
+
 
 </body>
 </html>
