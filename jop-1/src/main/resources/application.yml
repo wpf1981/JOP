@@ -60,7 +60,7 @@ spring:
     cache: false
     prefix: classpath:/templates/
     suffix: .html
-    #    cache: false #关闭缓存实际环境中true
+    #    cache: false #关闭缓存,实际环境中true
 
 #jpa配置
   jpa:

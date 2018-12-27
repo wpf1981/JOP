@@ -1,5 +1,7 @@
 package com.wpf.jop1.controller;
 
+import org.springframework.util.DigestUtils;
+
 import java.util.Map;
 
 
@@ -11,7 +13,7 @@ import java.util.Map;
 
 public class PassController{
     public String pd(String pb, String pa){
-        if (pb.equals(pa)) {
+        if (DigestUtils.md5DigestAsHex(pa.getBytes()).equals(pb)) {
             //重新定向到，视图映射的地址，防止重复提交表单
             return "redirect:/main.html";
         } else {

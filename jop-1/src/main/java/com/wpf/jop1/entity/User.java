@@ -12,7 +12,7 @@ import javax.persistence.Table;
  * @date 2018/12/24 - 9:09
  */
 @Entity
-@Table(name = "USERINFO")
+@Table(name = "W_USERINFO")
 @Data
 public class User {
     @Id
@@ -21,8 +21,6 @@ public class User {
     private String name;
     @Column
     private String pass;
-    @Column
-    private String rdate;
 
     public String getId() {
         return id;
@@ -46,13 +44,5 @@ public class User {
 
     public void setPass(String pass) {
         this.pass = pass;
-    }
-
-    public String getRdate() {
-        return rdate;
-    }
-
-    public void setRdate(String rdate) {
-        this.rdate = rdate;
     }
 }

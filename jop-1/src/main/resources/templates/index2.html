@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/3.3.7/css/bootstrap.min.css}" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/3.3.7/js/bootstrap.min.js}"  href="webjars/bootstrap/3.3.7/js/bootstrap.min.js">
+    <link rel="stylesheet" th:href="@{webjars/jquery/3.3.1-1/jquery.min.js}"  href="webjars/jquery/3.3.1-1/jquery.min.js">
+    <style type="text/css" media="print">
+        #an { display: none; }
+    </style>
+    <style type="text/css">
+        .container-small{
+            max-width: 800px;
+        }
+    </style>
+</head>
+<body >
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar">00</span>
+                <span class="icon-bar">11</span>
+                <span class="icon-bar">22</span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+
+        <div id="navbar" class="collapse navbar-collapse">
+            <h2>[[${session.loginUser}]]</h2>
+        </div><!--/.nav-collapse -->
+
+    </div>
+</nav>
+
+
+<div class="well">
+
+    <div class="container container-small">
+
+        <form>
+
+            <h1>测试</h1>
+            <div class="form-inline">
+                <div class="form-group">
+                    <lavel>A</lavel>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <lavel>B</lavel>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+        </form>
+        <br>
+        <button class="btn btn-block">打他</button>
+        <p>
+            <input class="btn btn-danger btn-block" type="submit" value="ok">
+        </p>
+    </div>
+
+</div>
+
+
+</body>
+</html>

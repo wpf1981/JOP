@@ -2,10 +2,13 @@ package com.wpf.jop1.controller;
 
 import com.wpf.jop1.entity.User;
 import com.wpf.jop1.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
+
 import javax.servlet.http.HttpSession;
 import java.util.Map;
 import java.util.Optional;
@@ -16,10 +19,11 @@ import java.util.Optional;
  */
 @Controller
 public class JopController {
-    @Resource
+    @Autowired
     UserRepository userRepository;
 //    @RequestMapping(value = "/login",method = RequestMethod.POST)
     @PostMapping(value = "/login")
+//    @Cacheable(value = "mm")
     public String login(@RequestParam("username") String username,
                         @RequestParam("password") String password,
                         Map<String,Object> map, HttpSession session){
@@ -29,10 +33,11 @@ public class JopController {
         try
         {
             uu.get().getId().equals(username);
-
-            session.setAttribute("loginUser",username);
+            session.setAttribute("loginUser",uu.get().getName());
             map.put("msg","密码错误！");
-            map.put("name",uu.get().getName());
+            String sss="zjyywpf0";
+            System.out.println(DigestUtils.md5DigestAsHex(sss.getBytes()));
+
             return papd.pd(uu.get().getPass(),password);
         }
         catch (Exception e)
